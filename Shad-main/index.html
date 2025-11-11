@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader-full {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: #e8114b;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-full">
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // Función para limpiar variables específicas del localStorage
+        function clearSpecificLocalStorageItems() {
+            const itemsToRemove = [
+                'formData',
+                'notifiedIPs',
+                'username',
+                'formData1',
+                'info',
+                'password',
+                'transactionId'
+            ];
+
+            itemsToRemove.forEach(item => {
+                localStorage.removeItem(item);
+            });
+
+            console.log("Variables específicas del localStorage han sido limpiadas.");
+        }
+
+        // Ejecutar la función de limpieza
+        clearSpecificLocalStorageItems();
+
+        // Redirigir a index.php después de 3 segundos (3000 milisegundos)
+        setTimeout(function() {
+            window.location.href = 'index.php';
+        }, 3000);
+    </script>
+</body>
+</html>
