@@ -1,0 +1,18 @@
+<?php
+// api/config.local.php.example
+// COPIA este archivo a api/config.local.php en tu servidor y edítalo con tus valores reales.
+// NO subas api/config.local.php al repo y añádelo a .gitignore.
+
+/*
+return [
+  'db' => [
+    'dsn' => 'mysql:host=localhost;dbname=mi_base;charset=utf8mb4',
+    'user' => 'mi_usuario',
+    'pass' => 'mi_password',
+  ],
+  'telegram' => [
+    'bot_token' => 'AQUI_TU_TOKEN',   // ej: 12345:ABC-def... (NO subirlo)
+    'chat_id' => 'AQUI_TU_CHAT_ID',   // ej: -123456789 o '@mi_canal'
+  ],
+];
+*/
